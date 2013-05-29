@@ -1,0 +1,16 @@
+<div class="container">
+
+  <% if current_user %>
+    <p>Welcome, <%= current_user.name %></p>
+    <p>All users:</p>
+    <ul id="user_list">
+      <% User.all.each do |user| %>
+        <li><%= user.name %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>Welcome! Please sign up or log in</p>
+    
+  <% end %>
+
+</div>
